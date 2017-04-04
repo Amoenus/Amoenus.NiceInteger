@@ -19,5 +19,5 @@ after_build:
 after_test:
 - cmd:
 artifacts:
-- path: '*\Amoenus.NiceInteger*.nupkg'
+- path: '**\Amoenus.NiceInteger*.nupkg'
   name: packages
