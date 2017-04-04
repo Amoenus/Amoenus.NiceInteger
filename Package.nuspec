@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<package>
+  <metadata>
+    <id>Amoenus.NiceInteger</id>
+    <version>$version$</version>
+    <title>Amoenus Nice Enum Description</title>
+    <authors>Romans Pokrovskis</authors>
+    <owners></owners>
+    <description>
+      Determine if integer is divisible by certain number or whether it is Odd or Even.
+    </description>
+    <releaseNotes>
+      Initial Release.
+    </releaseNotes>
+    <summary>
+      Determine if integer is divisible by certain number or whether it is Odd or Even.
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://github.com/Amoenus.NiceInteger</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://unlicense.org/UNLICENSE</licenseUrl>
+    <copyright></copyright>
+    <dependencies>
+    </dependencies>
+    <references></references>
+    <tags></tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\" target="lib\netstandard1.0" />
+    <file src="bin\Release\" target="lib\portable-net403+sl40+win+wp+Xbox40" />
+  </files>
+</package>
