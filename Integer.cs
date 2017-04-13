@@ -1,4 +1,6 @@
-﻿namespace Amoenus.NiceInteger
+﻿using System;
+
+namespace Amoenus.NiceInteger
 {
     /// <summary>
     /// Nice helpers for Integers
@@ -15,9 +17,10 @@
         /// </returns>
         public static bool IsDivisibleBy(this int dividend, int divisor)
         {
-            long remainder = dividend % divisor;
-            bool isDivisible = remainder == 0;
-            return isDivisible;
+            if(divisor==0) {
+                throw new ArgumentException();
+            }
+            return (divisor&(~divisor+1))==divisor ? dividend.IsEven() : (dividend%divisor)==0;
         }
 
         /// <summary>
@@ -29,7 +32,7 @@
         /// </returns>
         public static bool IsOdd(this int dividend)
         {
-            return !dividend.IsEven();
+            return (dividend&0x01)!=0;
         }
 
         /// <summary>
@@ -41,9 +44,7 @@
         /// </returns>
         public static bool IsEven(this int dividend)
         {
-            int remainder = dividend % 2;
-            bool isDivisible = remainder == 0;
-            return isDivisible;
+            return (dividend&0x01)==0;
         }
     }
 }
