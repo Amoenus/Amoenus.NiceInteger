@@ -20,7 +20,7 @@ namespace Amoenus.NiceInteger
             if(divisor==0) {
                 throw new DivideByZeroException();
             }
-            return (divisor&(~divisor+1))==divisor ? dividend.IsEven() : (dividend%divisor)==0;
+            return ((divisor&(~divisor+1))==divisor ? dividend&(divisor-1) : dividend%divisor)==0;
         }
 
         /// <summary>
