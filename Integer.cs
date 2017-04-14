@@ -3,48 +3,51 @@
 namespace Amoenus.NiceInteger
 {
     /// <summary>
-    /// Nice helpers for Integers
+    ///     Nice helpers for Integers
     /// </summary>
     public static class Integer
     {
         /// <summary>
-        /// Determines whether dividend is divisible by the specified divisor.
+        ///     Determines whether dividend is divisible by the specified divisor.
         /// </summary>
         /// <param name="dividend">The dividend.</param>
         /// <param name="divisor">The divisor.</param>
         /// <returns>
-        ///   <c>true</c> if is divisible by the specified divisor; otherwise, <c>false</c>.
+        ///     <c>true</c> if is divisible by the specified divisor; otherwise, <c>false</c>.
         /// </returns>
+        /// <exception cref="System.DivideByZeroException"></exception>
         public static bool IsDivisibleBy(this int dividend, int divisor)
         {
-            if(divisor==0) {
+            if (divisor == 0)
                 throw new DivideByZeroException();
-            }
-            return ((divisor&(~divisor+1))==divisor ? dividend&(divisor-1) : dividend%divisor)==0;
+
+            return ((divisor & (~divisor + 1)) == divisor
+                                                ? dividend & (divisor - 1)
+                                                : dividend % divisor) == 0;
         }
 
         /// <summary>
-        /// Determines whether dividend is odd number.
+        ///     Determines whether dividend is odd number.
         /// </summary>
         /// <param name="dividend">The dividend.</param>
         /// <returns>
-        ///   <c>true</c> if is divisible by the specified divisor; otherwise, <c>false</c>.
+        ///     <c>true</c> if is divisible by the specified divisor; otherwise, <c>false</c>.
         /// </returns>
         public static bool IsOdd(this int dividend)
         {
-            return (dividend&0x01)!=0;
+            return (dividend & 0x01) != 0;
         }
 
         /// <summary>
-        /// Determines whether dividend is even number.
+        ///     Determines whether dividend is even number.
         /// </summary>
         /// <param name="dividend">The dividend.</param>
         /// <returns>
-        ///   <c>true</c> if is divisible by the specified divisor; otherwise, <c>false</c>.
+        ///     <c>true</c> if is divisible by the specified divisor; otherwise, <c>false</c>.
         /// </returns>
         public static bool IsEven(this int dividend)
         {
-            return (dividend&0x01)==0;
+            return (dividend & 0x01) == 0;
         }
     }
 }

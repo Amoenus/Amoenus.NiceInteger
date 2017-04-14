@@ -16,6 +16,9 @@ before_package:
 - cmd:
 after_build:
 - cmd: nuget pack Package.nuspec -Version %appveyor_build_version%
+test:
+  assemblies:
+    - '**\*Tests.dll'
 after_test:
 - cmd:
 artifacts:
